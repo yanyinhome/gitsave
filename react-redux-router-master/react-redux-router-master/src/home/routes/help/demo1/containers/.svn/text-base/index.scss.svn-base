@@ -1,0 +1,8 @@
+.demo1{
+  color: red;
+  font-size: 20px;
+  width: 15px;
+  height: 29px;
+  background-image: url('../image/icon/icon-arrow.jpg');
+  background-size: cover;
+}

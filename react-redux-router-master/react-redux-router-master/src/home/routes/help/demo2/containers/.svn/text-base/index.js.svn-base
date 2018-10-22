@@ -1,0 +1,74 @@
+import React, { Component, PropTypes } from 'react'
+import * as tool from 'publicJs'
+class Main extends Component {
+  componentDidMount(){
+    tool.AppUtil.getSessionKey(this.sessionCallback)
+    // HostApp.testCallBack(JSON.stringify(obj),this.testShow);
+    // var l=log222(obj);
+    // alert(l.title+l.age);
+  }
+  sessionCallback = () => {
+    tool.AppUtil.alert({title: '标题',content: window.sessionKey,
+    type: '2'})
+  }
+  // testShow = (obj) => {
+  //   try{
+  //     HostApp.alert(obj.test);
+  //   }catch(e){
+  //     HostApp.alert(e);
+  //   }
+  // }
+  goRegister = () => {
+    tool.AppUtil.goRegister();
+  }
+  shouldLogin = () => {
+    tool.AppUtil.goLogin();
+  }
+  loginOverTime = () => {
+    tool.AppUtil.loginOverTime();
+  }
+  shouldRealname = () => {
+    tool.AppUtil.shouldRealname();
+  }
+  shouldBindCard = () => {
+    tool.AppUtil.shouldBindCard();
+  }
+  shouldRecharge = () => {
+    tool.AppUtil.shouldRecharge();
+  }
+  shouldUpdate = () => {
+    tool.AppUtil.shouldUpdate();
+  }
+  updateVersion = () => {
+    tool.AppUtil.updateVersion();
+  }
+  goPage = (pageName) => {
+    tool.AppUtil.goPage(pageName);
+  }
+  share = (obj) => {
+    tool.AppUtil.share(obj);
+  }
+  render() {
+    return (
+      <div className='demo2'>
+        <div className='title'>测试接口页面2</div>
+        <div className='btn' onClick={this.goRegister}>跳转注册</div>
+        <div className='btn' onClick={this.shouldLogin}>跳转登录</div>
+        <div className='btn' onClick={this.loginOverTime}>登录超时</div>
+        <div className='btn' onClick={this.shouldRealname}>需要实名</div>
+        <div className='btn' onClick={this.shouldBindCard}>需要绑卡</div>
+        <div className='btn' onClick={this.shouldRecharge}>需要充值</div>
+        <div className='btn' onClick={this.shouldUpdate}>是否需要更新</div>
+        <div className='btn' onClick={this.updateVersion}>更新版本</div>
+        <div className='btn' onClick={()=>{this.share({title:'标题',desc:'分享内容',url:'http://www.baidu.com'})}}>分享</div>
+        <div className='btn' onClick={()=>{this.goPage('productList')}}>跳转产品列表</div>
+        <div className='btn' onClick={()=>{this.goPage('activityList')}}>跳转活动列表</div>
+        <div className='btn' onClick={()=>{this.goPage('partner')}}>跳转合伙人</div>
+        <div className='btn' onClick={()=>{this.goPage('myInvestment')}}>跳转我的投资</div>
+        <div className='btn' onClick={()=>{this.goPage('myTask')}}>跳转我的任务</div>
+      </div>
+    )
+  }
+}
+
+module.exports = Main

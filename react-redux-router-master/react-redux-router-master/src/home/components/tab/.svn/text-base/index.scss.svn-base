@@ -1,0 +1,25 @@
+.component-tab {
+	display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: box;
+  -webkit-box-align: center;
+	.item {
+		text-align: center;
+		-moz-box-flex: 1;
+  	-webkit-box-flex: 1;
+		&.selected {
+			color: $color-orange;
+			border-bottom:(3rem/$num) solid $color-orange;
+		}
+    .tabs-title {
+      vertical-align: middle;
+    }
+	}
+}
+.recommend {
+	display: none;
+	&.selected {
+		display: block;
+	}
+}

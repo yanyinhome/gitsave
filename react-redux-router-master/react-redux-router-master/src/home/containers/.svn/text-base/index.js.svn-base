@@ -1,0 +1,17 @@
+import React, { Component, PropTypes } from 'react'
+import Btn from 'btn'
+import * as tool from 'publicJs'
+class Main extends Component {
+  componentDidMount() {
+    tool.bigDataUtil.setBigData();
+  }
+  render() {
+    return (
+      <div>
+      <Btn>首页</Btn>
+      </div>
+    )
+  }
+}
+
+module.exports = Main

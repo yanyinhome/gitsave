@@ -1,0 +1,28 @@
+import { combineReducers } from 'redux'
+import home from './home.js';//首页
+import HelpEach from './helpEach.js';//互助
+<<<<<<< .mine
+import brandIntroduction from './brandIntroduction.js';//品牌介绍
+=======
+import HelpDescript from './helpDescript.js';//互助描述页
+import ProjectDetail from './projectDetail.js';//项目详情
+import CrowdFund from './crowFund.js';//众筹详情
+>>>>>>> .r195
+/**
+ * 合并多个reducer
+ * @type {[type]}
+ */
+const reducer = combineReducers({
+<<<<<<< .mine
+  home,
+  HelpEach,
+  brandIntroduction
+=======
+  IndexList,
+  HelpEach,
+  HelpDescript,
+  CrowdFund,
+  ProjectDetail
+>>>>>>> .r195
+})
+export default reducer;

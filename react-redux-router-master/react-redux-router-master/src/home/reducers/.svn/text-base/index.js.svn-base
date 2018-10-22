@@ -1,0 +1,26 @@
+import { combineReducers } from 'redux'
+import * as tool from 'publicJs';
+import home from './home.js';//首页
+
+import * as helpRedux from './help-reducers/reducer';  //帮助模块
+import * as noviceRedux from './help-reducers/reducer';  //新手模块
+import * as crowdRedux from './crowd-reducers/reducer';  //众筹模块
+import * as aboutRedux from './about-us-reducers/reducer';  //品牌安全模块
+import * as helpEachRedux from './help-each-reducers/reducer';  //互助模块
+import * as projecthRedux from './project-reducers/reducer';  //项目详情
+import * as protocolhRedux from './protocol-reducers/reducer';  //协议模块
+
+/**
+ * 合并多个reducer
+ * @type {[type]}
+ */
+// const reduxs = tool.merged({
+//     home
+// },helpRedux,noviceRedux,aboutRedux,crowdRedux,helpEachRedux,projecthRedux,protocolhRedux);
+
+const reduxs= Object.assign({
+    home
+},helpRedux,noviceRedux,aboutRedux,crowdRedux,helpEachRedux,projecthRedux,protocolhRedux);
+
+const reducer = combineReducers(reduxs);
+export default reducer;

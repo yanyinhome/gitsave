@@ -1,0 +1,9 @@
+@import  '../components/loading/index.scss';//loading样式
+@import  '../components/btn/index.scss';//按钮样式
+@import  '../components/input/index.scss';//input样式
+@import  '../components/inputGroup/index.scss';//inputgroup样式
+@import  '../components/checkbox/index.scss';//checkbox样式
+@import  '../components/alert/index.scss';//alert样式
+@import  '../components/roll/index.scss';//滑动组件样式
+@import  '../components/verticalRoll/index.scss';//垂直滑动组件
+@import  '../components/accordion/index.scss';//可折叠

@@ -1,0 +1,55 @@
+.all-protocols {
+  p,div {
+    line-height: 150%;
+  }
+  p {
+    margin: (8rem/$num) 0;
+    text-indent: (48rem/$num);
+  }
+  .indent {
+    padding-left: (30rem/$num);
+  }
+  .level-one {
+    font-size: (40rem/$num);
+    color: $color-black1;
+    text-align: center;
+    padding:(32rem/$num) 0;
+  }
+  .level-two {
+    line-height: 150%;
+    font-size:(32rem/$num);
+    color: $color-black1;
+    padding:(24rem/$num) 0;
+  }
+  .level-thr {
+    font-size:$fs2;
+    color: $color-black1;
+    padding:(24rem/$num) 0;
+  }
+  //借款协议
+  .protocol-form {
+    .protocol-tr {
+      text-align: center;
+      display: box;
+      display: -webkit-box;
+      -webkit-box-align:center;
+      border: 1px solid $color-gray1;
+      &:not(:last-child ){
+        border-bottom: none;
+      }
+      .protocol-td {
+        box-flex: 1;
+        -webkit-box-flex: 1;
+        padding: (12rem/$num) 0;
+        &:not(:last-child) {
+          border-right: 1px solid $color-gray1;
+        }
+      }
+      .protocol-td-text {
+        padding:(20rem/$num);
+        text-align: left;
+        color: $color-black2;
+      }
+    }
+  }
+}

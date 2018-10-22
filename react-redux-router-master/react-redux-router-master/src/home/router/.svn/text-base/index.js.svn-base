@@ -1,0 +1,62 @@
+import React, {Component, PropTypes} from 'react';
+import { Router, Route, IndexRoute, browserHistory, hashHistory } from 'react-router';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+import App from '../containers/'
+
+import helpRouter from '../routes/help-module/router.js';//帮助中心
+import noviceRouter from '../routes/novice-module/router.js';//新手指引
+import aboutUsRouter from '../routes/about-us-module/router.js';//关于我们
+import crowdRouter from '../routes/crowd-module/router.js';//众筹
+import helpEachRouter from '../routes/help-each-module/router.js';//互助
+import projectRouter from '../routes/project-module/router.js';//理财项目
+import protocolRouter from '../routes/protocol-module/router.js';//协议
+/**
+ * (路由根目录组件，显示当前符合条件的组件)
+ *
+ * @class Roots
+ * @extends {Component}
+ */
+class Roots extends Component {
+    render() {
+        return (
+            <div>
+              {this.props.children}
+            </div>
+        );
+    }
+}
+// var history = process.env.NODE_ENV !== 'production' ? browserHistory : hashHistory;
+const RouteConfig = (
+    <Router history={hashHistory}>
+        <Route path="/" component={Roots}>
+            <IndexRoute component={App} />
+
+            <Route path='demo1' getComponent={(location, cb) => {
+              require.ensure([], (require) => {
+                  cb(null, require('../routes/demo1/containers'))
+              },'demo1')
+            }} />
+            <Route path='demo2' getComponent={(location, cb) => {
+                require.ensure([], (require) => {
+                  cb(null, require('../routes/demo2/containers'))
+                },'demo2')
+              }} />
+            //关于我们模块
+            {aboutUsRouter}
+            //众筹模块
+            {crowdRouter}
+            //互助模块
+            {helpEachRouter}
+            //理财产品模块
+            {projectRouter}
+            //协议模块
+            {protocolRouter}
+            //帮助中心模块
+            {helpRouter}
+            //    新手模块
+            {noviceRouter}
+        </Route>
+    </Router>
+);
+
+export default RouteConfig;
